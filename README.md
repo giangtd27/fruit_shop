@@ -1,2 +1,2 @@
-# fruit_shop
-# ok
+# Fruit Shop Project
+# First commit
