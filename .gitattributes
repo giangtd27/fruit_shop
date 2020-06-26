@@ -1,0 +1,145 @@
+# Define the line ending behavior of the different file extensions
+# Set default behaviour, in case users don't have core.autocrlf set.
+# https://help.github.com/articles/dealing-with-line-endings/
+# http://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/
+# http://stackoverflow.com/questions/4264447/can-gits-gitattributes-treat-all-files-as-binary-except-a-few-exceptions
+# http://stackoverflow.com/questions/29435156/what-will-text-auto-eol-lf-in-gitattributes-do
+# http://stackoverflow.com/questions/4264447/can-gits-gitattributes-treat-all-files-as-binary-except-a-few-exceptions
+# From the 2009 commit b9d14ff, those rules should go:
+# - from the more general ones
+# - to the more specific ones. ("a later line overrides an earlier line")
+# * text
+# * binary
+
+# Explicitly declare text files we want to always be normalized and converted
+# to native line endings on checkout.
+*.php text eol=lf
+*.phtml text eol=lf
+*.sample text eol=lf
+*.*-sample text eol=lf
+*.*_sample text eol=lf
+*.default text eol=lf
+*.ctp text eol=lf
+*.sql text eol=lf
+*.md text eol=lf
+*.po text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.ini text eol=lf
+*.config text eol=lf
+*.cfg text eol=lf
+*.properties text eol=lf
+*.txt text eol=lf
+*.xml text eol=lf
+*.yml text eol=lf
+
+# Declare files that will always have CRLF line endings on checkout.
+*.bat eol=crlf
+
+# Declare files that will always have LF line endings on checkout.
+*.pem eol=lf
+
+# source code
+*.php text eol=lf
+*.css text eol=lf
+*.sass text eol=lf
+*.scss text eol=lf
+*.less text eol=lf
+*.styl text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.coffee text eol=lf
+*.json text eol=lf
+*.htm text eol=lf
+*.html text eol=lf
+*.xml text eol=lf
+*.svg text eol=lf
+*.txt text eol=lf
+*.ini text eol=lf
+*.inc text eol=lf
+*.pl text eol=lf
+*.rb text eol=lf
+*.py text eol=lf
+*.scm text eol=lf
+*.sql text eol=lf
+*.sh text eol=lf
+*.bat text eol=lf
+
+# templates
+*.ejs text eol=lf
+*.hbt text eol=lf
+*.jade text eol=lf
+*.haml text eol=lf
+*.hbs text eol=lf
+*.dot text eol=lf
+*.tmpl text eol=lf
+*.phtml text eol=lf
+*.latte text eol=lf
+
+# server config
+.htaccess text eol=lf
+
+# git config
+.gitattributes text eol=lf
+.gitignore text eol=lf
+.gitconfig text eol=lf
+
+# code analysis config
+.jshintrc text eol=lf
+.jscsrc text eol=lf
+.jshintignore text eol=lf
+.csslintrc text eol=lf
+
+# misc config
+*.yaml text eol=lf
+*.yml text eol=lf
+.editorconfig text eol=lf
+
+# build config
+*.npmignore text eol=lf
+*.bowerrc text eol=lf
+
+# Heroku
+Procfile text eol=lf
+.slugignore text eol=lf
+
+# Documentation
+*.md text eol=lf
+LICENSE text eol=lf
+AUTHORS text eol=lf
+.readme text eol=lf
+.integrate_html text eol=lf
+
+# These files are binary and should be left untouched
+# (binary is a macro for -text -diff)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.mov binary
+*.mp4 binary
+*.mp3 binary
+*.flv binary
+*.fla binary
+*.swf binary
+*.gz binary
+*.zip binary
+*.7z binary
+*.tar binary
+*.ttf binary
+*.ttc binary
+*.otf binary
+*.eot binary
+*.woff binary
+*.woff2 binary
+*.pyc binary
+*.pdf binary
+*.so binary
+*.so.* binary
+*.dll binary
+*.lib binary
+*.exe binary
+*.gz binary
+*.mo binary
+*.dump binary
